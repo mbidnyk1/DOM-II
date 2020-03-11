@@ -15,14 +15,13 @@ document.addEventListener('keydown', () => {
     ? body.style.backgroundColor = 'orange' : body.style.backgroundColor = 'white') 
 })
 
-const button =  document.querySelectorAll('.btn')
+const button =  document.querySelector('#dragBtn')
 
-function dragstart_handler(button) {
-    button.dataTransfer.setData('text/plain',button.target.class)
+function onDragStart(event) {
+    event.dataTransfer.setData('text/plain',event.target.id)
+    event.currentTarget.style.backgroundColor = 'yellow'
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-    const element = document.getElementsByClassName('btn')
-    element.addEventListener('dragstart,dragstart_handler')
-})
+
+
 
